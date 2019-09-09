@@ -70,11 +70,16 @@
   - merge는 3가지 종류가 있음
     1. fast-forward merge
        - 분기되기 전의 브랜치에서 더이상 쌓인 커밋이 없는 상태에서 다른 커밋을 만들어 놓은 브랜치와 합치는 것 == 커밋할 브랜치가 현재 브랜치화 되는 것!
-    2. auto merger (without conflict)
+    2. auto merge (without conflict)
+       - branch가 merge 될 때 두개의 내용이 합쳐지지 않을 경우에 git이 알아서 합쳐버림. 
     3. merge with conflict 
+       - 서로 다른 branch에서 같은 파일을 수정했을 경우,(동일 파일이어도 내용이 연결될 수 있으면 auto merge가 일어날 수 도 있음)
+       - 특히 동일 라인의 내용이 다를 경우(이경우엔 무조건 conflict가 일어납니다. 동일 파일을 수정할 떈 조심하자좀)
 
 한마디로 평행세계를 만들어낸다.
 
 visualization git을 통해 시각적으로 알아보자
 
 url 맨 앞에 test.을 붙이면 테스트하는애들 잘하면 볼수도 있음 ㅋㅋ
+
+git pull은 auto merge와 patch 과정을 합친것!@#!#!@#!#!@#!#
