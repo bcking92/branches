@@ -12,7 +12,9 @@
 ## Git 기초
 
 - `git init`
+
 - `git add`
+
 - `git commit`
   - 커밋 이름을 정하는 틀
     - 커밋을 할때는 주어는 빼자(내가 커밋하는거 다 앎)
@@ -29,6 +31,13 @@
         - 원래 Head는 가장 최신의 커밋한 곳을 가르키고 있는데(master)  git checkout [커밋번호]를 해주면 Head가 해당 커밋을 가르키게 된다. 
 
 - `git log`
+
+  - 현재까지 커밋한 내역을 보여준다
+  - 빠져나올땐 q를 누름
+
+- `git log --oneline`
+
+  - 로그를 보여줄 때 하나의 커밋을 한줄로 보여줌
 
 ## Git 원격저장소(remote)
 
@@ -47,15 +56,17 @@
 - `git branch`
   - branch 목록을 보여줌, 친절하게도 현재 branch는 색깔로 표시해준다
 - `git switch [브랜치이름]`
-  - branch를 이동한다
+  - branch를 이동한다, checkout과 비슷하지만 오직 branch를 왔다리 갔다리 할 때만 사용함
 - `git checkout [브랜치이름 또는 커밋번호]`
   - branch를 이동하거나, 해당 커밋으로 이동한다 == Head를 바꿔 주는 것임.
 - `git branch -d [브랜치이름]`
   - branch를 삭제한다
 - `git checkout -b [브랜치이름]`
   - branch를 까면서 동시에 브랜치를 이동한다
-- `git switch -c [브랜치이름]
+- `git switch -c [브랜치이름]`
   - 위랑 똑같음 까면서 동시에 이동
+- `git merge [브랜치이름]`
+  - 현재 branch에서 특정 브랜치를 병합한다.
 
 한마디로 평행세계를 만들어낸다.
 
