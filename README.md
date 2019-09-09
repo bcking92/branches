@@ -52,30 +52,56 @@
 # Git Branch
 
 - `git branch [브랜치이름]`
+  
   - 새로운 branch를 만든다 (평행세계 만들기)
 - `git branch`
+  
   - branch 목록을 보여줌, 친절하게도 현재 branch는 색깔로 표시해준다
 - `git switch [브랜치이름]`
+  
   - branch를 이동한다, checkout과 비슷하지만 오직 branch를 왔다리 갔다리 할 때만 사용함
 - `git checkout [브랜치이름 또는 커밋번호]`
+  
   - branch를 이동하거나, 해당 커밋으로 이동한다 == Head를 바꿔 주는 것임.
 - `git branch -d [브랜치이름]`
+  
   - branch를 삭제한다
 - `git checkout -b [브랜치이름]`
+  
   - branch를 까면서 동시에 브랜치를 이동한다
 - `git switch -c [브랜치이름]`
+  
   - 위랑 똑같음 까면서 동시에 이동
 - `git merge [브랜치이름]`
   - 현재 branch에서 특정 브랜치를 병합한다.
   - merge는 3가지 종류가 있음
     1. fast-forward merge
+       
        - 분기되기 전의 브랜치에서 더이상 쌓인 커밋이 없는 상태에서 다른 커밋을 만들어 놓은 브랜치와 합치는 것 == 커밋할 브랜치가 현재 브랜치화 되는 것!
     2. auto merge (without conflict)
+       
        - branch가 merge 될 때 두개의 내용이 합쳐지지 않을 경우에 git이 알아서 합쳐버림. 
     3. merge with conflict 
        - 서로 다른 branch에서 같은 파일을 수정했을 경우,(동일 파일이어도 내용이 연결될 수 있으면 auto merge가 일어날 수 도 있음)
+       
        - 특히 동일 라인의 내용이 다를 경우(이경우엔 무조건 conflict가 일어납니다. 동일 파일을 수정할 떈 조심하자좀)
-       - 조심할꺼쥬?
+       
+       - conflict가 발생하면!
+       
+         ```
+         <<<<<<<<<<<< HEAD
+         현재 브랜치 내용
+         ==============
+         합치려는 브랜치내용
+         >>>>>>>>>>>> [합치려는 브랜치]
+         ```
+       
+         깃이 친절하게 위처럼 conflict를 수정하라고 하면서 현재 merge중이라는 merging 표시를 띄워준다.
+       
+         그러면 수정해주고 add commit을 해주면 깔끔하게 해결!
+       
+       - conflict의 정의
+         -  동일 파일의 동일 라인의 내용이 다를 경우!
 
 한마디로 평행세계를 만들어낸다.
 
@@ -83,4 +109,5 @@ visualization git을 통해 시각적으로 알아보자
 
 url 맨 앞에 test.을 붙이면 테스트하는애들 잘하면 볼수도 있음 ㅋㅋ
 
-git pull은 auto merge와 patch 과정을 합친것!@#!#!@#!#!@#!#
+git pull은 auto merge와 fetch 과정을 합친것!@#!#!@#!#!@#!#
+
